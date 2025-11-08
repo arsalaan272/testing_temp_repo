@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build Docker image
+      - name: Build Docker file
         run: |
           echo "Building Docker image for static hosting..."
           cat <<EOF > Dockerfile
@@ -52,4 +52,5 @@ jobs:
           docker push arsalaan272/frontend:v11
 
       - name: Print Docker Image URL
-        run: echo "✅ Image successfully pushed: docker.io/arsalaan272/frontend:v11"
+        run: |
+          echo "✅ Image successfully pushed: docker.io/arsalaan272/frontend:v11"
